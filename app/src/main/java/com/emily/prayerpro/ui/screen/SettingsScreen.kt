@@ -6,13 +6,14 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SettingsScreen(
     onBack: () -> Unit
 ) {
     Scaffold(
         topBar = {
-            SmallTopAppBar(
+            TopAppBar(
                 title = { Text("الإعدادات") },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
@@ -35,7 +36,7 @@ fun SettingsScreen(
             
             Row(modifier = Modifier.fillMaxWidth()) {
                 Text("تفعيل الأذان")
-                Spacer(modifier = Modifier.weight(1))
+                Spacer(modifier = Modifier.weight(1f))
                 Switch(checked = true, onCheckedChange = {})
             }
             
@@ -43,7 +44,7 @@ fun SettingsScreen(
             
             Row(modifier = Modifier.fillMaxWidth()) {
                 Text("تنبيه وضع الصامت")
-                Spacer(modifier = Modifier.weight(1))
+                Spacer(modifier = Modifier.weight(1f))
                 Switch(checked = true, onCheckedChange = {})
             }
         }
