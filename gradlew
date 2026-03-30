@@ -69,7 +69,7 @@ CLASSPATH=$APP_HOME/gradle/wrapper/gradle-wrapper.jar
 # Determine the Java command to use to start the JVM.
 if [ -n "$JAVA_HOME" ] ; then
     if [ -x "$JAVA_HOME/jre/sh/java" ] ; then
-        # IBM\'s JDK on AIX uses jre/sh/java instead of bin/java
+        # IBM's JDK on AIX uses jre/sh/java instead of bin/java
         JAVACMD="$JAVA_HOME/jre/sh/java"
     else
         JAVACMD="$JAVA_HOME/bin/java"
@@ -82,7 +82,7 @@ location of your Java installation."
     fi
 else
     JAVACMD="java"
-    which java >/dev/null 2>&1 || die "ERROR: JAVA_HOME is not set and no \'java\' command could be found in your PATH.
+    which java >/dev/null 2>&1 || die "ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.
 
 Please set the JAVA_HOME variable in your environment to match the
 location of your Java installation."
@@ -134,7 +134,7 @@ fi
 
 # Escape application args
 save () {
-    for i do printf %s\\n "$i" | sed "s/\'/\\\'\\\'/g;1s/^/\'/;\$s/\$/\' \\/" ; done
+    for i do printf %s\n "$i" | sed "s/'/'\''/g;1s/^/'/;\$s/\$/' \\/" ; done
     echo " "
 }
 APP_ARGS=$(save "$@")
@@ -146,6 +146,6 @@ eval set -- $DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS ""-Dorg.gradle.appname=$AP
 if [ ! -e "$APP_HOME/gradle/wrapper/gradle-wrapper.jar" ]; then
     echo "ERROR: gradle-wrapper.jar not found in $APP_HOME/gradle/wrapper/"
     exit 1
-}
+fi
 
 exec "$JAVACMD" "$@"
