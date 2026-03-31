@@ -102,7 +102,7 @@ if [ "$cygwin" = "false" -a "$msys" = "false" -a "$darwin" = "false" -a "$nonsto
     else
         warn "Could not query maximum file descriptor limit: $MAX_FD_LIMIT"
     fi
-}
+fi
 
 # For Cygwin, switch paths to Windows format before running java
 if $cygwin ; then
@@ -135,7 +135,7 @@ fi
 # Escape application args
 save () {
     for i do printf %s
- "$i" | sed "s/'/''/g;1s/^/'/;\$s/\$/' \/" ; done
+ "$i" | sed "s/'/\'\'/g;1s/^/'/;\$s/\$/' \/" ; done
     echo " "
 }
 APP_ARGS=$(save "$@")
